@@ -148,6 +148,49 @@ var John = Object.create(personProto,
        color: 'Black'
    }, 'Maulid', 'Abdullahi');
 
+   //Using Bind again
+
+   function printMyName(firstname, lastnames){
+       console.log(`${firstname} ${lastnames}`);
+       console.log(this);
+   }
+
+   let names = printMyName.bind({
+       Model:'Iphone',
+       Color:'Blue'
+   }, 'Maureen', 'Othiambo');
+
+   names();
+
+
+  ///Using apply method in javascript
+  function sum1 () {
+
+    console.log(this);
+
+      let sum1= 0;
+      for(var i = 0; i < arguments.length; i++){
+          sum1 += arguments[i];
+
+      }
+      return sum1;
+  }
+
+  var results = sum1.apply({
+      Model: 'Toyota',
+      Color: 'White'
+  },[2 , 5, 8, 6, 2])
+
+  console.log(results);
+
+  //method 2 on how to use apply method
+
+  function sum2(a, b){
+      return a + b;
+  }
+  var res = sum2.apply(null, [3, 7]);
+  console.log(res);
+
 
     
 
