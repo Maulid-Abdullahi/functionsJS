@@ -110,3 +110,44 @@ var John = Object.create(personProto,
     }
     var heart = arrayCalc(age,maxHeartRate);
     console.log(heart);
+
+
+
+    //Bind method in Javascript
+
+    var c1 = {
+        x: 12,
+        y: 20
+    }
+    var c2 = {
+        x: 35,
+        y:10
+    }
+
+    function printCoordinates(){
+        console.log(this.x + ' , ' + this.y);
+    }
+    //printCoordinates();
+
+   var coord = printCoordinates.bind(c1);
+   coord();
+
+   var coord2 = printCoordinates.bind(c2);
+   coord2();
+
+
+   ///call method in Javascript
+
+   function printNames(first, last){
+       console.log(`${first} ${last}`);
+       console.log(this)
+   }
+
+   printNames.call({
+       Model: 'Samsung',
+       color: 'Black'
+   }, 'Maulid', 'Abdullahi');
+
+
+    
+
